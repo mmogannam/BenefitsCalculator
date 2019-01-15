@@ -1,7 +1,7 @@
 {
-  "name": "redux-simple-starter",
+  "name": "paylocitychallenge",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "Paylocity Challenge project",
   "main": "index.js",
   "repository": "git@github.com:mmogannam/PaylocityChallenge.git",
   "engines": {
