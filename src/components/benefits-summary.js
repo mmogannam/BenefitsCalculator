@@ -42,7 +42,7 @@ import NumberFormat from 'react-number-format';
      return(
         <div className="container">
           <div>
-            <h5>Yearly Benefits Cost For {this.props.name}</h5>
+            <h5>Benefits Cost Per Year For {this.props.name}</h5>
             <div>Number of Dependents: {this.props.dependents.length}</div>
             <div>10% Employee Discount: {(employeeDiscount ? 'Yes': 'No')}</div>
             <div>10% Dependent Discount: {(dependentDiscount ? 'Yes': 'No')}</div>

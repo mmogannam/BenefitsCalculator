@@ -30,6 +30,7 @@ class BenefitsCalculator extends Component  {
     }
   }
 
+
   onFormReset(event) {
     event.preventDefault();
     //clear form values / state
@@ -48,6 +49,8 @@ class BenefitsCalculator extends Component  {
     this.setState({
       dependents: this.state.dependents.concat([{ name: '' }])
     });
+
+    console.log(this.state.dependents);
   }
 
   onInputChangeDependent = (idx) => (evt) => {
@@ -64,7 +67,7 @@ class BenefitsCalculator extends Component  {
   render(){
     return(
     <form onSubmit={this.onFormSubmit} >
-      <div style={{marginTop: '20px'}}><h4>Employee Benefits Calculator</h4></div>
+      <div style={{marginTop: '20px'}}><h4>Employee Benefits Cost Preview</h4></div>
       <div>
           <div className="form-group">
           <label htmlFor="name" >Employee Name</label>
@@ -91,17 +94,19 @@ class BenefitsCalculator extends Component  {
           }
           </div>
           <div>
-            <button type="submit" className="btn btn-primary">Calculate Benefits Cost</button>
-            <button style={{marginLeft: '10px'}} className="btn btn-warning" onClick={this.onFormReset}>Reset</button>
             <button style={{float: 'right'}} className="btn btn-primary" onClick={this.onAddDependent}>Add Dependent</button>
+          </div>
+          <div style={{whiteSpace: 'nowrap'}}>
+            <button type="submit" className="calculate-button btn btn-primary">Calculate</button>
+            <button style={{marginLeft: '10px'}} className="btn btn-warning" onClick={this.onFormReset}>Reset</button>
           </div>
         </div>
         <div>
           <BenefitsSummary
-          showResults={this.state.showResults}
-          name={this.state.name}
-          dependents={this.state.dependents}
-          inputError={this.state.inputError}/>
+            showResults={this.state.showResults}
+            name={this.state.name}
+            dependents={this.state.dependents}
+            inputError={this.state.inputError}/>
         </div>
       </form>
 
