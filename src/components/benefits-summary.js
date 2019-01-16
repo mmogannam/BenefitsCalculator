@@ -40,9 +40,9 @@ import NumberFormat from 'react-number-format';
      netSalary = grossSalary - benefitsCost;
 
      return(
-        <div className="container">
-          <div>
-            <h5>Benefits Cost Per Year For {this.props.name}</h5>
+        <div style={{marginTop: '30px'}}>
+          <h5>Benefits Cost Per Year For {this.props.name}</h5>
+          <div className="card card-body">
             <div>Number of Dependents: {this.props.dependents.length}</div>
             <div>10% Employee Discount: {(employeeDiscount ? 'Yes': 'No')}</div>
             <div>10% Dependent Discount: {(dependentDiscount ? 'Yes': 'No')}</div>
@@ -74,7 +74,7 @@ import NumberFormat from 'react-number-format';
 
   render(){
       return (
-        <div style={{paddingTop: '30px'}}>
+        <div style={{paddingBottom: '30px'}}>
             <div>{this.props.inputError ? this.renderError() : null}</div>
             {<div>{this.props.showResults ? this.renderSummary() : null}</div>}
         </div>

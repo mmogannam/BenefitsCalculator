@@ -5,3 +5,11 @@
     content: ' Benefits';
   }
  }
+
+.summary-line{
+  margin-bottom: 3px;
+}
+
+.card-body div{
+  margin-bottom: 3px;
+}

@@ -67,7 +67,7 @@ class BenefitsCalculator extends Component  {
   render(){
     return(
     <form onSubmit={this.onFormSubmit} >
-      <div style={{marginTop: '20px'}}><h4>Employee Benefits Cost Preview</h4></div>
+      <div style={{marginTop: '20px', marginBottom: '20px'}}><h3>Employee Benefits Cost Preview</h3></div>
       <div>
           <div className="form-group">
           <label htmlFor="name" >Employee Name</label>
@@ -78,13 +78,13 @@ class BenefitsCalculator extends Component  {
           onChange={this.onInputChange}/>
           </div>
         <div>
-          <br/>
+
           {
             this.state.dependents.map((dependent, index) => {
               return (
-                <div className="container" style={{marginBottom: '30px'}} key={index}>
-                  <h6>Dependent {index + 1}</h6>
-                  <label>Name</label>
+                <div style={{marginBottom: '30px'}} key={index}>
+                  <label>Dependent {index + 1} Name</label>
+
                   <input className="form-control"
                           value={dependent.name}
                           onChange={this.onInputChangeDependent(index)}/>
@@ -94,19 +94,19 @@ class BenefitsCalculator extends Component  {
           }
           </div>
           <div>
+            <BenefitsSummary
+              showResults={this.state.showResults}
+              name={this.state.name}
+              dependents={this.state.dependents}
+              inputError={this.state.inputError}/>
+          </div>
+          <div>
             <button style={{float: 'right'}} className="btn btn-primary" onClick={this.onAddDependent}>Add Dependent</button>
           </div>
           <div style={{whiteSpace: 'nowrap'}}>
             <button type="submit" className="calculate-button btn btn-primary">Calculate</button>
             <button style={{marginLeft: '10px'}} className="btn btn-warning" onClick={this.onFormReset}>Reset</button>
           </div>
-        </div>
-        <div>
-          <BenefitsSummary
-            showResults={this.state.showResults}
-            name={this.state.name}
-            dependents={this.state.dependents}
-            inputError={this.state.inputError}/>
         </div>
       </form>
 
