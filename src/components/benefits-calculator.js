@@ -19,14 +19,12 @@ class BenefitsCalculator extends Component  {
   onFormSubmit(event) {
     event.preventDefault();
 
+    //set default state
+    this.setState({inputError: true, showResults: false});
     //validate form or show summary
     if(this.state.name != '' && this.state.dependents.every(obj => obj.name != ''))
     {
       this.setState({inputError: false, showResults: true});
-    }
-    else
-    {
-      this.setState({inputError: true, showResults: false})
     }
   }
 
@@ -50,7 +48,6 @@ class BenefitsCalculator extends Component  {
       dependents: this.state.dependents.concat([{ name: '' }])
     });
 
-    console.log(this.state.dependents);
   }
 
   onInputChangeDependent = (idx) => (evt) => {
